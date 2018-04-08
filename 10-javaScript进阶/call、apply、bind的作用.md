@@ -1,6 +1,6 @@
-# bind()
+## bind()
 
-## 介绍
+### 介绍
 
 bind() 是固定某个函数的参数和this，返回另外一个函数。修正this指向的问题，一般可以用es6的箭头函数代替
 
@@ -28,9 +28,9 @@ var userName = getUserName.bind(user)
 userName()  // 张三
 ```
 
-# call()和apply()
+## call()和apply()
 
-## 介绍
+### 介绍
 
 这两个方法都是函数对象的方法，需要通过函数对象来调用。
 
@@ -97,7 +97,7 @@ console.log(user2) // 清华大学-李四-21
 
 实际上改变了this的指向到user2里
 
-不明白再看一个例子：
+不明白再看一个例子
 
 例子3：
 
@@ -128,7 +128,9 @@ var user = {
     student: function () {
         this.studentName = '张三'
         this.studentAge = 20
+        console.log(this.schoolName) // undefined
         this.school.call(this, '北京大学', '北京')
+        console.log(this.schoolName) // 北京大学
         return this
     }
 }
