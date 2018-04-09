@@ -23,4 +23,19 @@ natapp实际是外网链接的桥梁，客户端链接natapp服务端后，便�
 
 使用收费版，需要绑定2级域名，3元/年，如果需要支持https，要有SSL证书，15元/年
 
+## 遇到问题
+
+### 域名无法映射到vue-cli域名
+
+vue cli的单页项目很可能是无法直接代理就能够访问到，例如使用域名访问项目时报不合法的主机头，但是修改一个配置就可以使用ip映射访问了！
+
+在项目初始化时，根目录中有一个文件夹，找到build/webpack.dev.conf.js
+
+在 devServer 对象下添加代码：
+
+```javascript
+disableHostCheck: true
+```
+然后再次使用natapp的命令行配置一下，然后在浏览器中访问项目，如果正常访问，那就ok了！
+
 最后奉上官网链接：https://natapp.cn/
