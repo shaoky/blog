@@ -14,3 +14,6 @@ net stop MongoDB
 mongodump 备份所有
 
 mongorestore -h localhost:27017 -d mall c://db/mall 恢复指定数据库
+
+## 基础使用
+
