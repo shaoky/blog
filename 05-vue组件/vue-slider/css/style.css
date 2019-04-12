@@ -1,0 +1,158 @@
+body{font-family: "microsoft yahei","Arial","Verdana";}
+.wrap{min-width: 320px;max-width: 750px;margin: 0 auto;}
+
+[v-cloak] {
+  display: none;
+}
+
+.index-page{padding: 20px;}
+
+/*分页组件*/
+.vue-slider-wrap{
+    margin: 0 25px;
+    padding: 8px;
+    background: #fff;
+}
+
+/*金额滑块*/
+.vue-slider-title{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: #17b6ff;
+}
+
+.vue-slider-title h3{
+    color: #323232;
+}
+
+.vue-slider{
+    position: relative;
+    display: block;
+    border-radius: 15px;
+    background: #ccc;
+}
+
+.vue-slider-always{
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    z-index: 3;
+    box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32);
+    /*transition: all 0.5s ease 0s;*/
+    transform: translateX(-8px);
+}
+
+.vue-slider-process{
+    position: absolute;
+    border-radius: 15px;
+    background: #3498db;
+    z-index: 1;
+    width: 0;
+    /*transition: all 0.5s ease 0s;*/
+}
+
+.vue-slider-line{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -5px;
+    height: 10px;
+    background: #16b7ff;
+    border-radius: 5px;
+}
+
+.vue-slider-content input[type=range]{
+    width: 100%;
+    height: 20px;
+    margin-top: 0px;
+    -webkit-appearance: none;
+    border-radius: 10px;
+}
+
+.vue-slider-content input[type=range]::-webkit-slider-runnable-track {
+    height: 10px;
+    border-radius: 10px; /*将轨道设为圆角的*/
+    background: #a8a8a8;
+}
+
+.vue-slider-content input[type=range]::-webkit-slider-thumb {
+    position: relative;z-index: 999;
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    margin-top: -8px; /*使滑块超出轨道部分的偏移量相等*/
+    background: url(../images/vue-slider-icon.png) no-repeat center; 
+    background-size: 100% 100%;
+    border-radius: 50%; /*外观设置为圆形*/
+}
+
+.vue-slider-result{
+    width: 260px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 20px 0;
+    font-size: 16px;
+    color: #fe8500;
+    text-align: center;
+    border-radius: 40px;
+    border:2px solid #f5f5f5;
+ }
+.vue-slider-result h2{color: #323232;}
+
+.vue-slider-time{}
+
+.vue-slider-line{width: 200px;}
+
+    .price{
+        .range_tip{
+            h3{}
+        }
+        .range_content{
+            .tiao{}
+            input[type=range]{}
+            input[type=range]::-webkit-slider-runnable-track {
+                height: 10px;
+                border-radius: 10px; /*将轨道设为圆角的*/
+                background: #a8a8a8;
+            }
+            input[type=range]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                height: 25px;
+                width: 25px;
+                margin-top: -8px; /*使滑块超出轨道部分的偏移量相等*/
+                background: url(../images/rate_sum.png) no-repeat center; 
+                background-size: 100% 100%;
+                border-radius: 50%; /*外观设置为圆形*/
+                position: relative;z-index: 999;
+            }
+        }
+    }
+        .time{margin-top: @rem*30;
+            .range_tip{text-align: center;.font-dpr(18);color: #40f227;
+                h3{color: #323232;}
+            }
+            .range_content{position: relative;margin-top: 10px;
+                .tiao{background: #41f125;height: 10px;position: absolute;left: 0;top: 50%;margin-top: -5px; border-radius: 5px;}
+                input[type=range]{width: 100%;-webkit-appearance: none;border-radius: 10px;margin-top: 0px;height: 20px;}
+                input[type=range]::-webkit-slider-runnable-track {
+                    height: 10px;
+                    border-radius: 10px; /*将轨道设为圆角的*/
+                    background: #a8a8a8;
+                }
+                input[type=range]::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    height: 25px;
+                    width: 25px;
+                    margin-top: -8px; /*使滑块超出轨道部分的偏移量相等*/
+                    background: url(../images/rate_fate.png) no-repeat center; 
+                    background-size: 100% 100%;
+                    border-radius: 50%; /*外观设置为圆形*/
+                    position: relative;z-index: 999;
+                }
+            }
+        }
+        
+

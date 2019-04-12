@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>vue分页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">      <!--重置浏览器样式-->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">      <!--组件样式-->
+</head>	
+<body>
+    <div class="wrap" id="app">
+        <div class="index-page">
+            <page :search="search" :count="count" @callback="getData"></page>
+        </div>
+    </div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>               <!--加载vue-->
+<script src="./js/page.js"></script>                                    <!--加载分页组件-->
+
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                search: {                   // 向api发送请求参数
+                    page: 1,                // 页数
+                    size: 10                // 每次多少条
+                },
+                count: 200                  // 总条数
+            }
+        },
+        methods: {
+            getData: function (cur) {       // 回调函数
+                this.search.page = cur
+                console.log(cur)
+            }
+        },
+        components: {
+            'page': page                    // 注册分页组件
+        }
+    })
+</script>
+</body>
+</html>

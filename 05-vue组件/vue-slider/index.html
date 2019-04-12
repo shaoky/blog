@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>vue分页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>	
+<body>
+    <div class="wrap" id="app" v-cloak>
+        <div class="vue-slider-title">
+            <h3>借款金额</h3>
+            <i>{{data.price}}</i>.00元
+        </div>
+        <slider v-bind="sliderPrice" @callback="getPrice"></slider>
+        <div class="vue-slider-title">
+            <h3>借款时间</h3>
+            <i>{{data.time}}</i>天
+        </div>
+        <slider v-bind="sliderDate" @callback="getDate"></slider>
+        <div class="vue-slider-result">
+            <h2>借款费用</h2>
+            <i class="price_count">{{cost}}</i>元
+        </div>
+    </div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="./js/slider.js"></script>
+
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                sliderPrice: {
+                    value: 5000,
+                    min: 0,
+                    max: 100,
+                    step: 100
+                },
+                sliderDate: {
+                    value: 20,
+                    min: 7,
+                    max: 30,
+                    step: 1,
+                },
+                data: {
+                    price: null,
+                    time: null,
+                },
+                cost: null,
+                interest: 0.01
+            }
+        },
+        methods: {
+            getPrice: function (val) {
+                this.data.price = val
+                this.setCost()
+            },
+            getDate: function (val) {
+                this.data.time = val
+                this.setCost()
+            },
+            setCost: function () {
+                this.cost = this.data.price * this.interest * this.data.time
+            }
+        },
+        components: {
+            'slider': slider
+        }
+    })
+</script>
+</body>
+</html>

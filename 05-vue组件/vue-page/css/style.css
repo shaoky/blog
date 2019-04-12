@@ -1,0 +1,45 @@
+body{font-family: "microsoft yahei","Arial","Verdana";}
+.wrap{min-width: 320px;max-width: 750px;margin: 0 auto;}
+
+.index-page{padding: 20px;}
+
+/*分页组件*/
+.page-bar ul{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap:wrap;
+}
+
+.page-bar ul li{
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+    margin-left: -1px;
+    font-size: 14px;
+}
+
+.page-bar ul li{
+    color: #337ab6;
+}
+
+.page-bar ul li.active{
+    background: #337ab7;
+}
+
+.page-bar ul li.active{
+    color: #fff;
+}
+
+.page-bar ul li.all{
+    cursor: auto;
+}
+
+.page-bar ul li.all i{
+    margin: 0 5px;
+    color: #d7575d;
+}
+
+
