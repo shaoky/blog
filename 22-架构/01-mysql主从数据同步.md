@@ -1,6 +1,6 @@
 ## mysql主从数据同步
 
-### 用途及条件
+### 1、用途及条件
 
 mysql主从复制用途
 - 实时灾备，用于故障切换
@@ -12,14 +12,14 @@ mysql主从复制用途
 - 主从server-id不同
 - 从库服务器能连通主库
 
-### 主从原理
+### 2、主从原理
 
 从库生成两个线程，一个I/O线程，一个SQL线程；<br/>
 i/o线程去请求主库 的binlog，并将得到的binlog日志写到relay log（中继日志） 文件中；<br/>
 主库会生成一个 log dump 线程，用来给从库 i/o线程传binlog；<br/>
 SQL 线程，会读取relay log文件中的日志，并解析成具体操作，来实现主从的操作一致，而最终数据一致；
 
-### 问题及解决方法
+### 3、问题及解决方法
 
 mysql主从复制存在的问题：
 - 主库宕机后，数据可能丢失
@@ -29,7 +29,7 @@ mysql主从复制存在的问题：
 - 半同步复制---解决数据丢失的问题
 - 并行复制----解决从库复制延迟的问题
 
-### 半同步复制
+### 4、半同步复制
 
 mysql semi-sync（半同步复制）<br/>
 半同步复制：<br/>
@@ -39,9 +39,7 @@ mysql semi-sync（半同步复制）<br/>
 - 性能有一定的降低，响应时间会更长
 - 网络异常或从库宕机，卡主主库，直到超时或从库恢复
 
-### 实现
-
-### 主服务器
+### 5、主服务器
 
 安装
 ```
@@ -69,7 +67,7 @@ mysql-> show master status;
 1 row in set (0.04 sec)
 ```
 
-### 从服务器
+### 6、从服务器
 
 安装
 ```
@@ -112,7 +110,7 @@ Slave_IO_State: Waiting for master to send event
 ```
 mysql->stop slave;
 mysql->stop slave;
-mysql->show global variables like 'rpl_semi%';
+mysql->show global variables like 'rpl_semi%'; #可以查看是否开启
 mysql->show global status like 'rpl_semi%';
 ```
 
